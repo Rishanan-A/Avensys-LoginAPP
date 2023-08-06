@@ -32,8 +32,10 @@ This will launch the application in your default web browser. You can access it 
 
 Usage
 
-The application provides a simple login page where users can enter their credentials. It validates the user input and performs a login process with Firebase as the authentication provider and stores user data in the Firebase Realtime Database. Once logged in if the user's role is a manager, they will be provided an extra button and will be able to access all the users on the database on a restriceted page
+The application provides a simple login page where users can enter their credentials. It validates the user input and performs a login process with Firebase as the authentication provider and stores user data in the Firebase Realtime Database. Once logged in, users with a "manager" role will be provided an extra button and will be able to access all the users on the database on a restricted page.
 
-Thank you for checking out our Simple Login Application with Firebase Integration! If you have any questions or feedback, please feel free to reach out.
+Features
 
-Happy coding!
+User Authentication with Firebase
+Role-based Access Control (Manager Access)
+Responsive and User-friendly Interface
