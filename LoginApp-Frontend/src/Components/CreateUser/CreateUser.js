@@ -72,8 +72,12 @@ function CreateUser() {
   return (
     <div>
       <form onSubmit={handleSubmit} className='create-user-model'>
+      {successMessage && (
+        <Alert variant="success" onClose={() => setSuccessMessage('')} dismissible>
+          {successMessage}
+        </Alert>
+      )}
         <div className='form-group'>
-            <h3>Create User</h3>
           <label htmlFor="username">Username</label>
           <input
             type="text"
@@ -130,13 +134,6 @@ function CreateUser() {
         </div>
         <button type="submit" className='btn btn-secondary mb-3'>Create User</button>
       </form>
-
-      
-      {successMessage && (
-        <Alert variant="success" onClose={() => setSuccessMessage('')} dismissible>
-          {successMessage}
-        </Alert>
-      )}
     </div>
   );
 }

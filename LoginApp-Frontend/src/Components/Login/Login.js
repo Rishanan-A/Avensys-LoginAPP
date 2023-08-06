@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Alert } from 'react-bootstrap';
+//import { Alert } from 'react-bootstrap';
+import { Modal, Button, Alert } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import CreateUser from '../CreateUser/CreateUser';
@@ -13,7 +14,6 @@ function Login() {
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [showCreateUserModal, setShowCreateUserModal] = useState(false);
-  const [createUserButtonText, setCreateUserButtonText] = useState('Create User');
 
   const navigate = useNavigate();
 
@@ -61,11 +61,6 @@ function Login() {
     }
   }, []);
 
-  const toggleCreateUserModal = () => {
-    setShowCreateUserModal(!showCreateUserModal);
-    setCreateUserButtonText(showCreateUserModal ? 'Create User' : 'Close Create User');
-  };
-
   useEffect(() => {
     if (!showCreateUserModal) {
       setSuccessMessage('');
@@ -93,11 +88,23 @@ function Login() {
               <input type='submit' className='btn btn-primary mb-3' value={'SIGN IN'} />
             </form>
 
-            <button className="btn btn-secondary mb-3" onClick={toggleCreateUserModal}>
-              {createUserButtonText}
-            </button>
+            <Button className="btn btn-secondary mb-3" onClick={() => setShowCreateUserModal(true)}>
+              Create User
+            </Button>
             
-            {showCreateUserModal && <CreateUser />}
+            <Modal show={showCreateUserModal} onHide={() => setShowCreateUserModal(false)}>
+              <Modal.Header closeButton>
+                <Modal.Title>Create User</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <CreateUser />
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={() => setShowCreateUserModal(false)}>
+                  Close
+                </Button>
+              </Modal.Footer>
+            </Modal>
             
           </div>
         </div>
