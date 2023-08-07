@@ -5,6 +5,8 @@ import { Modal, Button, Alert } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import CreateUser from '../CreateUser/CreateUser';
+import { useTranslation } from 'react-i18next';
+import i18n from 'i18next';
 
 function Login() {
   // eslint-disable-next-line 
@@ -15,13 +17,19 @@ function Login() {
   const [successMessage, setSuccessMessage] = useState('');
   const [showCreateUserModal, setShowCreateUserModal] = useState(false);
 
+  const defaultLanguage = 'en';
+  const storedLanguage = localStorage.getItem('Lang');
+  const initialLanguage = storedLanguage && Object.keys(i18n.options.resources).includes(storedLanguage) ? storedLanguage : defaultLanguage;
+  const [selectedLanguage, setSelectedLanguage] = useState(initialLanguage);
+
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     if (!username || !password) {
-      setError('Please enter your username and password!');
+      setError(t('translation.empty_username_password'));
       return;
     }
 
@@ -49,7 +57,7 @@ function Login() {
       })
       .catch((error) => {
         console.error(`Error: ${error}`);
-        setError('Invalid username or password');
+        setError(t('translation.invalid_username_password'));
       });
   };
 
@@ -66,46 +74,58 @@ function Login() {
       setSuccessMessage('');
     }
   }, [showCreateUserModal]);
+
+  const handleLanguageChange = (event) => {
+    const selectedLanguage = event.target.value;
+    setSelectedLanguage(selectedLanguage);
+    i18n.changeLanguage(selectedLanguage);
+    localStorage.setItem('Lang', selectedLanguage);
+  };
   
 
   return (
     <div className="container h-100">
+      <div className="language-dropdown">
+        <select value={selectedLanguage} onChange={handleLanguageChange}>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+        </select>
+      </div>
       <div className="row align-items-center h-100">
         <div className="col-6 mx-auto">
           <div className="jumbotron jumbotron-fluid rounded shadow-lg p-3 mb-5 bg-white rounded hoverable">
-            <h2 className='text-center'>Sign In</h2>
+            <h2 className="text-center">{t('translation.sign_in')}</h2>
             <form className='login-form' noValidate onSubmit={handleSubmit}>
               <div className='form-group'>
-                <label htmlFor='username'>Username</label>
-                <input type='text' id='username' className='form-control login-input' placeholder='Username' onChange={e => setUsername(e.target.value)} />
+                <label htmlFor='username'>{t('translation.username')}</label>
+                <input type='text' id='username' className='form-control login-input' placeholder={t('translation.username')} onChange={e => setUsername(e.target.value)} />
               </div>
               <div className='form-group mb-3'>
-                <label htmlFor='password'>Password</label>
-                <input type='password' id='password' className='form-control login-input' placeholder='Password' onChange={e => setPassword(e.target.value)} />
+                <label htmlFor='password'>{t('translation.password')}</label>
+                <input type='password' id='password' className='form-control login-input' placeholder={t('translation.password')} onChange={e => setPassword(e.target.value)} />
               </div>
               {error && <Alert variant="danger">{error}</Alert>}
               {successMessage && <Alert variant="success">{successMessage}</Alert>}
-              <input type='submit' className='btn btn-primary mb-3' value={'SIGN IN'} />
+              <input type='submit' className='btn btn-primary mb-3' value={t('translation.sign_in_btn')} />
             </form>
 
             <Button className="btn btn-secondary mb-3" onClick={() => setShowCreateUserModal(true)}>
-              Create User
+              {t('translation.createUser')}
             </Button>
             
             <Modal show={showCreateUserModal} onHide={() => setShowCreateUserModal(false)}>
               <Modal.Header closeButton>
-                <Modal.Title>Create User</Modal.Title>
+                <Modal.Title>{t('translation.createUser')} </Modal.Title>
               </Modal.Header>
               <Modal.Body>
                 <CreateUser />
               </Modal.Body>
               <Modal.Footer>
                 <Button variant="secondary" onClick={() => setShowCreateUserModal(false)}>
-                  Close
+                  {t('translation.close')}
                 </Button>
               </Modal.Footer>
             </Modal>
-            
           </div>
         </div>
       </div>

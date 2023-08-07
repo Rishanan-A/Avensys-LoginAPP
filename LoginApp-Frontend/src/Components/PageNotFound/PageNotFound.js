@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function PageNotFound() {
   const [isBlinking, setIsBlinking] = useState(true);
+  const userData = localStorage.getItem('user');
 
   useEffect(() => {
     const blinkInterval = setInterval(() => {
@@ -24,10 +25,17 @@ function PageNotFound() {
       </div>
       <h2 style={styles.title}>PAGE NOT FOUND</h2>
       <p style={styles.message}>Oops! The page you are looking for does not exist.</p>
-      <Link to="/welcome" style={styles.button}>
-        <FontAwesomeIcon icon={faArrowAltCircleLeft} style={styles.buttonIcon} />
-        Go to Welcome Page or Log In first
-      </Link>
+      {!userData ? (
+        <Link to="/login" style={styles.button}>
+          <FontAwesomeIcon icon={faArrowAltCircleLeft} style={styles.buttonIcon} />
+          Log In first
+        </Link>
+      ) : (
+        <Link to="/welcome" style={styles.button}>
+          <FontAwesomeIcon icon={faArrowAltCircleLeft} style={styles.buttonIcon} />
+          Go to welcome page
+        </Link>
+      )}
     </div>
   );
 }

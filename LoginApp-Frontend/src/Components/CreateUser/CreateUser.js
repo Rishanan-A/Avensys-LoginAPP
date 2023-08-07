@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './CreateUser.css';
 import { Alert } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 
 function CreateUser() {
+  const { t } = useTranslation();
+
   const [userData, setUserData] = useState({
     username: '',
     password: '',
@@ -78,34 +81,34 @@ function CreateUser() {
         </Alert>
       )}
         <div className='form-group'>
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username">{t('translation.username')}</label>
           <input
             type="text"
             id="username"
             name="username"
             value={userData.username}
             onChange={handleChange}
-            placeholder='Enter Username'
+            placeholder={t('translation.username')}
             className='form-control'
           />
           {errors.username && <div className="text-danger">{errors.username}</div>}
         </div>
         <div className='form-group'>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">{t('translation.password')}</label>
           <input
             type="password"
             id="password"
             name="password"
             value={userData.password}
             onChange={handleChange}
-            placeholder='Enter Password'
+            placeholder={t('translation.password')}
             className='form-control'
           />
           {errors.password && <div className="text-danger">{errors.password}</div>}
 
         </div>
         <div className='form-group'>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">{t('translation.email')}</label>
           <input
             type="email"
             id="email"
@@ -113,26 +116,26 @@ function CreateUser() {
             value={userData.email}
             onChange={handleChange}
             className='form-control'
-            placeholder='Enter Email'
+            placeholder={t('translation.email')}
           />
           {errors.email && <div className="text-danger">{errors.email}</div>}
 
         </div>
         <div className='form-group'>
-          <label htmlFor="role">Role</label>
+          <label htmlFor="role">{t('translation.selectRole')}</label>
           <select
             className="form-control custom-select"
             id="role"
             name="role"
             value={userData.role}
             onChange={handleChange}>
-            <option value=''>Select Role</option>
-            <option value='User'>User</option>
-            <option value='Manager'>Manager</option>
+            <option value=''>{t('translation.selectRole')}</option>
+            <option value='User'>{t('translation.user')}</option>
+            <option value='Manager'>{t('translation.manager')}</option>
           </select>
           {errors.role && <div className="text-danger">{errors.role}</div>}
         </div>
-        <button type="submit" className='btn btn-secondary mb-3'>Create User</button>
+        <button type="submit" className='btn btn-secondary mb-3'>{t('translation.createUser')}</button>
       </form>
     </div>
   );

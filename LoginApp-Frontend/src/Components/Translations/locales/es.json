@@ -1,0 +1,28 @@
+
+{
+    "translation": {
+      "sign_in": "Iniciar sesión",
+      "username": "Nombre de usuario",
+      "password": "Contraseña",
+      "sign_in_btn": "INICIAR SESIÓN",
+      "createUser": "Crear Usuario",
+      "close_btn": "Cerrar",
+      "english": "English",
+      "spanish": "Español",
+      "empty_username_password":"¡Porfavor introduzca su nombre de usuario y contraseña!",
+      "invalid_username_password":"usuario o contraseña invalido",
+      "welcome":"¡Bienvenido!",
+      "role":"Rol",
+      "email":"Correo electrónico",
+      "accessRestrictedPage": "Página de acceso restringido",
+      "logout":"Cerrar sesión",
+      "allUsers":"Todos los usuarios",
+      "createdAt":"Creado en",
+      "goBack":"Regresa",
+      "selectRole":"seleccionar rol",
+      "close":"Cerca",
+      "user":"Usuario",
+      "manager":"Gerente"
+    }
+  }
+  

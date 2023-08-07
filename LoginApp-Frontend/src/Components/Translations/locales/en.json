@@ -1,0 +1,28 @@
+
+{
+    "translation": {
+      "sign_in": "Sign In",
+      "username": "Username",
+      "password": "Password",
+      "sign_in_btn": "SIGN IN",
+      "createUser": "Create User",
+      "close_btn": "Close",
+      "english": "English",
+      "spanish": "Español",
+      "empty_username_password":"Please enter your username and password!",
+      "invalid_username_password":"Invalid username or password",
+      "welcome":"Welcome",
+      "role":"Role",
+      "email":"Email",
+      "accessRestrictedPage": "Access Restricted Page",
+      "logout":"Logout",
+      "allUsers":"All Users",
+      "createdAt":"Created At",
+      "goBack":"Go Back",
+      "selectRole":"Select Role",
+      "close":"Close",
+      "user":"User",
+      "manager":"Manager"
+    }
+  }
+  
