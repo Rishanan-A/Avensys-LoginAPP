@@ -44,9 +44,7 @@ The application provides a simple login page where users can enter their credent
 ## Change Log
 
 V1.0 
-
--Initial upload of frontend and backend
+- Initial upload of frontend and backend
 
 v1.0.1
-
 - Changed Create user Modal view
