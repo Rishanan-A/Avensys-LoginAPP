@@ -48,3 +48,8 @@ V1.0
 
 v1.0.1
 - Changed Create user Modal view
+
+v1.1
+- Implemented new route guard
+- Fix small bugs
+- Added Spanish translations
