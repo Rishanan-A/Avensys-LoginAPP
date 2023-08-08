@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import CreateUser from '../CreateUser/CreateUser';
 import { useTranslation } from 'react-i18next';
-import i18n from 'i18next';
+import NavBar from '../NavBar/NavBar';
 
 function Login() {
   // eslint-disable-next-line 
@@ -16,11 +16,6 @@ function Login() {
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [showCreateUserModal, setShowCreateUserModal] = useState(false);
-
-  const defaultLanguage = 'en';
-  const storedLanguage = localStorage.getItem('Lang');
-  const initialLanguage = storedLanguage && Object.keys(i18n.options.resources).includes(storedLanguage) ? storedLanguage : defaultLanguage;
-  const [selectedLanguage, setSelectedLanguage] = useState(initialLanguage);
 
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -74,23 +69,11 @@ function Login() {
       setSuccessMessage('');
     }
   }, [showCreateUserModal]);
-
-  const handleLanguageChange = (event) => {
-    const selectedLanguage = event.target.value;
-    setSelectedLanguage(selectedLanguage);
-    i18n.changeLanguage(selectedLanguage);
-    localStorage.setItem('Lang', selectedLanguage);
-  };
   
 
   return (
-    <div className="container h-100">
-      <div className="language-dropdown">
-        <select value={selectedLanguage} onChange={handleLanguageChange}>
-          <option value="en">English</option>
-          <option value="es">Español</option>
-        </select>
-      </div>
+    <div className="body">
+      <NavBar/>
       <div className="row align-items-center h-100">
         <div className="col-6 mx-auto">
           <div className="jumbotron jumbotron-fluid rounded shadow-lg p-3 mb-5 bg-white rounded hoverable">

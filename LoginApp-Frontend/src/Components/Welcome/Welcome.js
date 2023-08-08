@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Card, ListGroup, Button } from 'react-bootstrap';
+import { Card, ListGroup, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import i18n from 'i18next';
+import NavBar from '../NavBar/NavBar';
 
 function Welcome() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);  
-  
-  const defaultLanguage = 'en';
-  const storedLanguage = localStorage.getItem('Lang');
-  const initialLanguage = storedLanguage && Object.keys(i18n.options.resources).includes(storedLanguage) ? storedLanguage : defaultLanguage;
-  const [selectedLanguage, setSelectedLanguage] = useState(initialLanguage);
+
 
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -44,22 +40,10 @@ function Welcome() {
     return;
   }
 
-  const handleLanguageChange = (event) => {
-    const selectedLanguage = event.target.value;
-    setSelectedLanguage(selectedLanguage);
-    i18n.changeLanguage(selectedLanguage);
-    localStorage.setItem('Lang', selectedLanguage);
-  };
-
   return (
-    <Container className="mt-5">
-      <div className="language-dropdown">
-        <select value={selectedLanguage} onChange={handleLanguageChange}>
-          <option value="en">English</option>
-          <option value="es">Español</option>
-        </select>
-      </div>
-      <Card style={{ width: '18rem' }}>
+    <div className="body">
+      <NavBar/>
+      <Card style={{ width: '18rem', marginLeft:10, marginTop:10 }}>
         <Card.Body>
           <Card.Title>{t('translation.welcome')}, {user.username}!</Card.Title>
           <ListGroup variant="flush">
@@ -74,7 +58,7 @@ function Welcome() {
           <Button onClick={handleLogout} className="mt-3">{t('translation.logout')}</Button>
         </Card.Body>
       </Card>
-    </Container>
+    </div>
   );
 }
   

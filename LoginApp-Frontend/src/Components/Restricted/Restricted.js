@@ -3,15 +3,10 @@ import axios from 'axios';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import i18n from 'i18next';
+import NavBar from '../NavBar/NavBar';
 
 function Restricted() {
   const [users, setUsers] = useState([]);
-
-  const defaultLanguage = 'en';
-  const storedLanguage = localStorage.getItem('Lang');
-  const initialLanguage = storedLanguage && Object.keys(i18n.options.resources).includes(storedLanguage) ? storedLanguage : defaultLanguage;
-  const [selectedLanguage, setSelectedLanguage] = useState(initialLanguage);
 
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -37,13 +32,6 @@ function Restricted() {
     navigate('/welcome');
   }
 
-  const handleLanguageChange = (event) => {
-    const selectedLanguage = event.target.value;
-    setSelectedLanguage(selectedLanguage);
-    i18n.changeLanguage(selectedLanguage);
-    localStorage.setItem('Lang', selectedLanguage);
-  };
-
   const isManager = localStorage.getItem('role')?.toLowerCase() === 'manager';
   
   if (!isManager) {
@@ -52,13 +40,8 @@ function Restricted() {
   }
 
   return (
-    <div className="container mt-5">
-      <div className="language-dropdown">
-        <select value={selectedLanguage} onChange={handleLanguageChange}>
-          <option value="en">English</option>
-          <option value="es">Español</option>
-        </select>
-      </div>
+    <div className="body">
+      <NavBar/>
       <h2>{t('translation.allUsers')}</h2>
       <table className="table table-bordered">
         <thead className="thead-dark">

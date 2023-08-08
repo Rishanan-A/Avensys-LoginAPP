@@ -22,7 +22,9 @@
       "selectRole":"seleccionar rol",
       "close":"Cerca",
       "user":"Usuario",
-      "manager":"Gerente"
+      "manager":"Gerente",
+      "home":"Hogar",
+      "restricted":"restringido"
     }
   }
   

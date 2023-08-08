@@ -22,7 +22,9 @@
       "selectRole":"Select Role",
       "close":"Close",
       "user":"User",
-      "manager":"Manager"
+      "manager":"Manager",
+      "home":"Home",
+      "restricted":"Restricted"
     }
   }
   
