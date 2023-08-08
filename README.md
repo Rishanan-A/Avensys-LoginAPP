@@ -53,3 +53,7 @@ v1.1
 - Implemented new route guard
 - Fix small bugs
 - Added Spanish translations
+
+v1.2
+- Added NavBar for better navigation
+- UI update
