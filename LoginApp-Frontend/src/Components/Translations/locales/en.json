@@ -24,7 +24,12 @@
       "user":"User",
       "manager":"Manager",
       "home":"Home",
-      "restricted":"Restricted"
+      "restricted":"Restricted",
+      "actions":"Actions",
+      "edit":"Edit",
+      "delete":"Delete",
+      "saveChanges":"Save changes",
+      "updateUser":"Update User"
     }
   }
   

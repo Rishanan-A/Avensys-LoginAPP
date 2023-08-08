@@ -43,7 +43,8 @@ function Welcome() {
   return (
     <div className="body">
       <NavBar/>
-      <Card style={{ width: '18rem', marginLeft:10, marginTop:10 }}>
+        <Card style={{ width: '18rem', marginLeft: 25, marginTop: 25, borderRadius: '10px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}>
+        <Card.Img variant="top" src='/logo512.png' alt="User profile picture" style={{ borderRadius: '10px 10px 0 0' }}/>
         <Card.Body>
           <Card.Title>{t('translation.welcome')}, {user.username}!</Card.Title>
           <ListGroup variant="flush">

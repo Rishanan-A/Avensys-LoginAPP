@@ -24,7 +24,12 @@
       "user":"Usuario",
       "manager":"Gerente",
       "home":"Hogar",
-      "restricted":"restringido"
+      "restricted":"restringido",
+      "actions":"Comportamiento",
+      "edit":"Editar",
+      "delete":"Borrar",
+      "saveChanges":"Guardar cambios",
+      "updateUser":"Actualizar usuario"
     }
   }
   
