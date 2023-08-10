@@ -63,5 +63,5 @@ v1.3 (8/8/2023)
 - UI update
 
 v1.3.1 (10/8/2023)
-- Added ability to Update/Delete user
+- Added more translations
 - UI update
