@@ -1,0 +1,33 @@
+{
+    "translation": {
+      "sign_in": "உள் நுழை",
+      "username": "பயனர்பெயர்",
+      "password": "கடவுச்சொல்",
+      "sign_in_btn": "உள் நுழை",
+      "createUser": "பயனரை உருவாக்கு",
+      "close_btn": "மூடு",
+      "english": "ஆங்கிலம்",
+      "spanish": "ஸ்பானிஷ்",
+      "empty_username_password": "உங்கள் பயனர்பெயர் மற்றும் கடவுச்சொல்லை உள்ளிடவும்!",
+      "invalid_username_password": "தவறான பயனர்பெயர் அல்லது கடவுச்சொல்",
+      "welcome": "வருக",
+      "role": "பங்கு",
+      "email": "மின்னஞ்சல்",
+      "accessRestrictedPage": "கட்டுப்படுத்தப்பட்ட பக்கத்தை பார்",
+      "logout": "வெளியேறு",
+      "allUsers": "அனைத்து பயனர்கள்",
+      "createdAt": "உருவாக்கப்பட்டது",
+      "goBack": "மீண்டுவா",
+      "selectRole": "பங்கை தேர்வு செய்",
+      "close": "மூடு",
+      "user": "பயனர்",
+      "manager": "மேலாளர்",
+      "home": "முகப்பு",
+      "restricted": "கட்டுப்படுத்தப்பட்டது",
+      "actions": "நடவடிக்கைகள்",
+      "edit": "தொகு",
+      "delete": "அழி",
+      "saveChanges": "மாற்றங்களை சேமி",
+      "updateUser": "பயனரை புதுப்பி"
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "translation": {
+      "sign_in": "Log Masuk",
+      "username": "Nama Pengguna",
+      "password": "Kata Laluan",
+      "sign_in_btn": "LOG MASUK",
+      "createUser": "Cipta Pengguna",
+      "close_btn": "Tutup",
+      "english": "Inggeris",
+      "spanish": "Sepanyol",
+      "empty_username_password": "Sila masukkan nama pengguna dan kata laluan anda!",
+      "invalid_username_password": "Nama pengguna atau kata laluan tidak sah",
+      "welcome": "Selamat Datang",
+      "role": "Peranan",
+      "email": "E-mel",
+      "accessRestrictedPage": "Akses Laman Terhad",
+      "logout": "Log Keluar",
+      "allUsers": "Semua Pengguna",
+      "createdAt": "Dicipta Pada",
+      "goBack": "Kembali",
+      "selectRole": "Pilih Peranan",
+      "close": "Tutup",
+      "user": "Pengguna",
+      "manager": "Pengurus",
+      "home": "Laman Utama",
+      "restricted": "Terhad",
+      "actions": "Tindakan",
+      "edit": "Edit",
+      "delete": "Padam",
+      "saveChanges": "Simpan Perubahan",
+      "updateUser": "Kemaskini Pengguna"
+    }
+}

@@ -59,6 +59,9 @@ function NavBar() {
               <select value={selectedLanguage} onChange={handleLanguageChange}>
                 <option value="en">{t('English')}</option>
                 <option value="es">{t('Español')}</option>
+                <option value="cn">{t('Chinese')}</option>
+                <option value="ml">{t('Malay')}</option>
+                <option value="tl">{t('Tamil')}</option>
               </select>
             </div>
             {userData && ( 
