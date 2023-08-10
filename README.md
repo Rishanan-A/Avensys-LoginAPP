@@ -43,21 +43,25 @@ The application provides a simple login page where users can enter their credent
 
 ## Change Log
 
-V1.0 (4/7/2023)
+V1.0 (4/8/2023)
 - Initial upload of frontend and backend
 
-v1.0.1 (6/7/2023)
+v1.0.1 (6/8/2023)
 - Changed Create user Modal view
 
-v1.1 (7/7/2023)
+v1.1 (7/8/2023)
 - Implemented new route guard
 - Fix small bugs
 - Added Spanish translations
 
-v1.2 (8/7/2023)
+v1.2 (8/8/2023)
 - Added NavBar for better navigation
 - UI update
 
-v1.3 (8/7/2023)
+v1.3 (8/8/2023)
+- Added ability to Update/Delete user
+- UI update
+
+v1.3.1 (10/8/2023)
 - Added ability to Update/Delete user
 - UI update
